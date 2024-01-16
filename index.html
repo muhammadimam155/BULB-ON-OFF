@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   #btn{
+    cursor: pointer;
+    width: 160px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid black;
+    transition-duration: .5s;
+    margin-top: 50px;
+   }
+   #btn:hover{
+    transform: scale(1.1);
+   }
+   .center{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    padding-top: 60px;
+   }
+</style>
+<body>
+    
+
+    <div class="center">
+        <img src="./bulb_off.jpeg" alt="" id="imgon" >
+        <button id="btn">light on</button>
+    </div>
+    
+
+    <script>
+        let btn = document.getElementById('btn')
+        let img = document.getElementById('imgon')
+        btn.addEventListener('click',change)
+        function change(e){
+            if (btn.textContent.includes('on')) {
+                img.src = "bulb.jpeg"
+                btn.style.background = "green"
+                btn.style.color = "white"
+                btn.style.fontSize ="25px"
+                btn.textContent ="turn off"
+            }else{
+                img.src = "bulb_off.jpeg"
+                btn.textContent = "turn on"
+                btn.style.background = "yellow"
+                btn.style.color = "black"
+                btn.style.fontSize ="20px"
+            }
+        }
+    </script>
+</body>
+</html>
